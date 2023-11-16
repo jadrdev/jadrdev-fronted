@@ -26,8 +26,6 @@ export const Strings = {
     Work: "Experiencia Laboral",
     WorkDescription: "Mi camino hasta llegar dónde estoy ahora",
     TechnologyUsage: "Tecnologías utilizadas",
-    ProjectTitle: "Proyecto",
-    ProjectName: "Proyecto: AutumLife",
 
     // Footer
     AvisoLegal: "Aviso Legal",

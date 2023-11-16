@@ -39,15 +39,13 @@ const Experience = () => {
                         <h4 className="text-lg leading-6 font-semibold text-white">
                         Mid-Senior Frontend Developer
                         </h4>
-                        <p className="mt-2 text-base leading-6 text-gray-400">
+                        <p className="mt-2 text-base leading-6 text-white">
                         {Strings.TechnologyUsage}
                         </p>
                         <p className="mt-2 text-base leading-6 text-gray-400">
-                        Flutter, React, Dart, TypeScript, Docker.
+                        Flutter, React, Dart, TypeScript, Docker
                         </p>
-                        <p className="mt-2 text-base leading-6 text-gray-400">
-                        {Strings.ProjectName}
-                        </p>
+                       
                     </div>
                 </div>
               </div>
@@ -78,15 +76,13 @@ const Experience = () => {
                         <h4 className="text-lg leading-6 font-semibold text-white">
                         Mid-Senior Frontend Developer
                         </h4>
-                        <p className="mt-2 text-base leading-6 text-gray-400">
+                        <p className="mt-2 text-base leading-6 text-white">
                         {Strings.TechnologyUsage}
                         </p>
                         <p className="mt-2 text-base leading-6 text-gray-400">
-                        Flutter, React, Dart, TypeScript, Docker.
+                        React, React Native, TypeScript, NestJS
                         </p>
-                        <p className="mt-2 text-base leading-6 text-gray-400">
-                        {Strings.ProjectName}
-                        </p>
+                       
                     </div>
                 </div>
               </div>
@@ -100,7 +96,7 @@ const Experience = () => {
                 <span className="shrink-0 ">
                   <Image
                     src={keapps}
-                    alt="logo-hiberus"
+                    alt="logo-keapps"
                     width={150}
                     height={150}
                   />
@@ -117,15 +113,13 @@ const Experience = () => {
                         <h4 className="text-lg leading-6 font-semibold text-white">
                         Mid-Junior Frontend Developer
                         </h4>
-                        <p className="mt-2 text-base leading-6 text-gray-400">
+                        <p className="mt-2 text-base leading-6  text-white">
                         {Strings.TechnologyUsage}
                         </p>
                         <p className="mt-2 text-base leading-6 text-gray-400">
-                        Flutter, React, Dart, TypeScript, Docker.
+                        React, TypeScript, Docker, SharePoint
                         </p>
-                        <p className="mt-2 text-base leading-6 text-gray-400">
-                        {Strings.ProjectName}
-                        </p>
+                    
                     </div>
                 </div>
               </div>
