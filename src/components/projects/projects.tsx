@@ -8,18 +8,18 @@ export default function Projects() {
   return (
     <section>
       <div className="max-w-7xl mx-auto h-28">
-        <h1 className="text-4xl md:text-4xl font-bold py-15 text-center md:text-left">
+        <h1 className="text-4xl mb-2 md:text-4xl font-bold py-15 text-center md:text-left">
           {Strings.Project}
         </h1>
-        <h3
-          className="font-header text-xl font-medium py-2 sm:text-2xl lg:text-3xl"
+        <h4
+          className="font-header text-xl font-medium py-2 sm:text-2xl text-center lg:text-3xl"
         >
           {Strings.ProjectDescription}
-        </h3>
+        </h4>
       </div>
       {/* Grid starts here */}
       <div className="dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 py-18 pb-215">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 py-18 pb-215 sm: p-5">
           {/* Single card */}
           <a
             href="https://tailwindmasterkit.com"
