@@ -1,11 +1,39 @@
+"use client";
+
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import fonto from "../../../src/img/fonto.webp";
 import Link from 'next/link';
 import { Strings } from '@/constants/string';
+import { api } from "@/api/api";
+import { Post } from "@/domain/interfaces/PostInterface";
+
+
 
 export default function Projects() {
+
+  const [projects, setProjects] = useState<Post[]>([]);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const postProjects = await api.posts.browse({
+          limit: 10,
+          include: "tags,authors",
+          filter: "tag:projects",
+        });
+        setProjects(postProjects);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+  
+    fetchProjects();
+  }, []);
+
+
   return (
+
     <section>
       <div className="max-w-7xl mx-auto h-28">
         <h1 className="text-4xl mb-2 md:text-4xl font-bold py-15 text-center md:text-left">
