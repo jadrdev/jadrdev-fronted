@@ -1,8 +1,9 @@
 import GhostContentAPI from "@tryghost/content-api";
 
+// Create API instance with site credentials
 export const api = new GhostContentAPI({
-    url: 'http://localhost:2368',
-    key: '6fb1d9c50e6d70bb2fdbea8b46',
+    url: 'https://jadrdev.digitalpress.blog',
+    key: '1b18ca37c79b3e4ca1be563eb9',
     version: "v5.0"
   });
 
