@@ -4,8 +4,6 @@ import Image from "next/image";
 import { Strings } from "@/constants/string";
 import { api } from "@/api/api";
 import { SettingGhost } from "@/domain/interfaces/SettingsInterface";
-import Link from "next/link";
-import { FaFacebook, FaTwitter, FaSun, FaRegMoon } from "react-icons/fa";
 import { useTheme } from 'next-themes'
 const menu = () => {
   const [settings, setSettings] = useState<SettingGhost>();
