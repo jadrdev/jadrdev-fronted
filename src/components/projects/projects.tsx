@@ -47,16 +47,12 @@ export default function Projects() {
       {/* Grid starts here */}
       {projects.length > 0 ? (
         <div className="dark:bg-gray-900">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 py-18 pb-215 sm: p-5">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 py-18 pb-215">
             {/* Single card */}
-            <Link
-              href={`/projects/${projects[0].slug}`}
-              className="block"
-              passHref
-            >
+            
               <Card
                 isFooterBlurred
-                className="w-full h-[300px] col-span-12 sm:col-auto"
+                className="w-full h-[300px] col-span-12 sm:col-12"
               >
                 <CardHeader className="absolute z-10 top-1 flex-col items-start">
                   <p className="text-tiny text-black/60 uppercase font-bold">
@@ -87,7 +83,7 @@ export default function Projects() {
                   </Button>
                 </CardFooter>
               </Card>
-            </Link>
+            
             <Card
               isFooterBlurred
               className="w-full h-[300px] col-span-12 sm:col-auto"
