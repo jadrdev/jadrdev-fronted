@@ -45,122 +45,129 @@ export default function Projects() {
         </h4>
       </div>
       {/* Grid starts here */}
-      <div className="dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 py-18 pb-215 sm: p-5">
-          {/* Single card */}
-          <Card
-            isFooterBlurred
-            className="w-full h-[300px] col-span-12 sm:col-auto"
-          >
-            <CardHeader className="absolute z-10 top-1 flex-col items-start">
-              <p className="text-tiny text-white/60 uppercase font-bold">
-                Your day your way
-              </p>
-              <h4 className="text-white/90 font-medium text-xl">
-                Your checklist for better sleep
-              </h4>
-            </CardHeader>
-            <Image
-              removeWrapper
-              alt="Relaxing app background"
-              className="z-0 w-full h-full object-cover"
-              src="/images/card-example-5.jpeg"
-            />
-            <CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
-              <div className="flex flex-grow gap-2 items-center">
-                <Image
-                  alt="Breathing app icon"
-                  className="rounded-full w-10 h-11 bg-black"
-                  src="/images/breathing-app-icon.jpeg"
-                />
-                <div className="flex flex-col">
-                  <p className="text-tiny text-white/60">Breathing App</p>
-                  <p className="text-tiny text-white/60">
-                    Get a good night's sleep.
+      {projects.length > 0 ? (
+        <div className="dark:bg-gray-900">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 py-18 pb-215 sm: p-5">
+            {/* Single card */}
+            <Link
+              href={`/projects/${projects[0].slug}`}
+              className="block"
+              passHref
+            >
+              <Card
+                isFooterBlurred
+                className="w-full h-[300px] col-span-12 sm:col-auto"
+              >
+                <CardHeader className="absolute z-10 top-1 flex-col items-start">
+                  <p className="text-tiny text-black/60 uppercase font-bold">
+                    {projects[0].tags.map((tag, index) => (
+                      <span key={tag.id}>
+                        {tag.name}
+                        {index < projects[0].tags.length - 1 && ", "}
+                      </span>
+                    ))}
                   </p>
-                </div>
-              </div>
-              <Button radius="full" size="sm">
-                Get App
-              </Button>
-            </CardFooter>
-          </Card>
-          <Card
-            isFooterBlurred
-            className="w-full h-[300px] col-span-12 sm:col-auto"
-          >
-            <CardHeader className="absolute z-10 top-1 flex-col items-start">
-              <p className="text-tiny text-white/60 uppercase font-bold">
-                Your day your way
-              </p>
-              <h4 className="text-white/90 font-medium text-xl">
-                Your checklist for better sleep
-              </h4>
-            </CardHeader>
-            <Image
-              removeWrapper
-              alt="Relaxing app background"
-              className="z-0 w-full h-full object-cover"
-              src="/images/card-example-5.jpeg"
-            />
-            <CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
-              <div className="flex flex-grow gap-2 items-center">
+                </CardHeader>
                 <Image
-                  alt="Breathing app icon"
-                  className="rounded-full w-10 h-11 bg-black"
-                  src="/images/breathing-app-icon.jpeg"
+                  removeWrapper
+                  alt="Relaxing app background"
+                  className="z-0 w-full h-full object-cover"
+                  src={projects[0].feature_image}
                 />
-                <div className="flex flex-col">
-                  <p className="text-tiny text-white/60">Breathing App</p>
-                  <p className="text-tiny text-white/60">
-                    Get a good night's sleep.
-                  </p>
+                <CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
+                  <div className="flex flex-grow gap-2 items-center">
+                    <div className="flex flex-col">
+                      <p className="text-tiny text-white/60">
+                        {projects[0].title}
+                      </p>
+                    </div>
+                  </div>
+                  <Button radius="full" size="sm">
+                    Get App
+                  </Button>
+                </CardFooter>
+              </Card>
+            </Link>
+            <Card
+              isFooterBlurred
+              className="w-full h-[300px] col-span-12 sm:col-auto"
+            >
+              <CardHeader className="absolute z-10 top-1 flex-col items-start">
+                <p className="text-tiny text-white/60 uppercase font-bold">
+                  Your day your way
+                </p>
+                <h4 className="text-white/90 font-medium text-xl">
+                  Your checklist for better sleep
+                </h4>
+              </CardHeader>
+              <Image
+                removeWrapper
+                alt="Relaxing app background"
+                className="z-0 w-full h-full object-cover"
+                src="/images/card-example-5.jpeg"
+              />
+              <CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
+                <div className="flex flex-grow gap-2 items-center">
+                  <Image
+                    alt="Breathing app icon"
+                    className="rounded-full w-10 h-11 bg-black"
+                    src="/images/breathing-app-icon.jpeg"
+                  />
+                  <div className="flex flex-col">
+                    <p className="text-tiny text-white/60">Breathing App</p>
+                    <p className="text-tiny text-white/60">
+                      Get a good night's sleep.
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <Button radius="full" size="sm">
-                Get App
-              </Button>
-            </CardFooter>
-          </Card>
-          <Card
-            isFooterBlurred
-            className="w-full h-[300px] col-span-12 sm:col-auto"
-          >
-            <CardHeader className="absolute z-10 top-1 flex-col items-start">
-              <p className="text-tiny text-white/60 uppercase font-bold">
-                Your day your way
-              </p>
-              <h4 className="text-white/90 font-medium text-xl">
-                Your checklist for better sleep
-              </h4>
-            </CardHeader>
-            <Image
-              removeWrapper
-              alt="Relaxing app background"
-              className="z-0 w-full h-full object-cover"
-              src="/images/card-example-5.jpeg"
-            />
-            <CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
-              <div className="flex flex-grow gap-2 items-center">
-                <Image
-                  alt="Breathing app icon"
-                  className="rounded-full w-10 h-11 bg-black"
-                  src="/images/breathing-app-icon.jpeg"
-                />
-                <div className="flex flex-col">
-                  <p className="text-tiny text-white/60">Breathing App</p>
-                  <p className="text-tiny text-white/60">
-                    Get a good night's sleep.
-                  </p>
+                <Button radius="full" size="sm">
+                  Get App
+                </Button>
+              </CardFooter>
+            </Card>
+            <Card
+              isFooterBlurred
+              className="w-full h-[300px] col-span-12 sm:col-auto"
+            >
+              <CardHeader className="absolute z-10 top-1 flex-col items-start">
+                <p className="text-tiny text-white/60 uppercase font-bold">
+                  Your day your way
+                </p>
+                <h4 className="text-white/90 font-medium text-xl">
+                  Your checklist for better sleep
+                </h4>
+              </CardHeader>
+              <Image
+                removeWrapper
+                alt="Relaxing app background"
+                className="z-0 w-full h-full object-cover"
+                src="/images/card-example-5.jpeg"
+              />
+              <CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
+                <div className="flex flex-grow gap-2 items-center">
+                  <Image
+                    alt="Breathing app icon"
+                    className="rounded-full w-10 h-11 bg-black"
+                    src="/images/breathing-app-icon.jpeg"
+                  />
+                  <div className="flex flex-col">
+                    <p className="text-tiny text-white/60">Breathing App</p>
+                    <p className="text-tiny text-white/60">
+                      Get a good night's sleep.
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <Button radius="full" size="sm">
-                Get App
-              </Button>
-            </CardFooter>
-          </Card>
+                <Button radius="full" size="sm">
+                  Get App
+                </Button>
+              </CardFooter>
+            </Card>
+          </div>
         </div>
-      </div>
+      ) : (
+        <p>Cargando...</p>
+      )}
+      {/* Grid ends here */}
       <div className="mx-auto pt-8 text-center">
         <Link href="projects">
           <button className="text-xl bg-transparent hover:bg-red-500 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded">
