@@ -39,44 +39,24 @@ export const Articles = () => {
                 {" "}
                 {/* Establecer el ancho de la tarjeta en un tercio de la pantalla en dispositivos medianos y grandes */}
                 <Link href={`/blog/${post.slug}`} className="block" passHref>
-                  <Card className="py-4">
-                    <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-                      <p className="text-tiny uppercase font-bold">
-                        {post.tags.map((tag) => (
+                  <Card className="col-span-12 sm:col-span-4 h-[300px]">
+                    <CardHeader className="absolute z-10 top-1 flex-col !items-start">
+                      <p className="text-tiny text-white/60 uppercase font-bold">
+                      {post.tags.map((tag) => (
                           <span key={tag.id}>{tag.name}</span>
                         ))}
                       </p>
-                      <small className="text-default-500">
-                        {post.reading_time} min.
-                      </small>
-                      <h4 className="font-bold text-large">{post.title}</h4>
+                      <h4 className="text-white font-medium text-large">
+                      {post.title}
+                      </h4>
                     </CardHeader>
-                    <CardBody className="overflow-visible py-2">
-                      <Image
-                        alt="Card background"
-                        className="object-cover rounded-xl"
-                        src={post.feature_image}
-                        width={670}
-                      />
-                    </CardBody>
+                    <Image
+                      removeWrapper
+                      alt="Card background"
+                      className="z-0 w-full h-full object-cover"
+                      src={post.feature_image}
+                    />
                   </Card>
-                  {/* <Card
-                      renderImage={() => (
-                        <img
-                          src={post.feature_image}
-                          alt={post.title}
-                          className="w-full h-auto"
-                        />
-                      )}
-                    >
-                      <span className="text-sm text-gray-600">
-                        {new Date(post.published_at).toLocaleDateString()}
-                      </span>
-                      <h5 className="text-2xl font-bold tracking-tight text-gray-900">
-                        {post.title}
-                      </h5>
-                      <p>{post.excerpt}</p>
-                    </Card> */}
                 </Link>
               </div>
             ))}
