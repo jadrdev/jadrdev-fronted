@@ -9,7 +9,7 @@ const Experience = () => {
   return (
     <>
       <div className="container py-16 md:py-20" id="Experience">
-        <h2 className="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
+        <h2 className="text-center font-header text-4xl font-semibold uppercase sm:text-5xl lg:text-6xl">
           {Strings.Work}
         </h2>
         <h3 className="pt-6 text-center font-header text-xl font-medium text-white sm:text-2xl lg:text-3xl">
