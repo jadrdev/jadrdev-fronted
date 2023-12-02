@@ -36,9 +36,9 @@ export default function Projects() {
 
     <section>
       <div className="max-w-7xl mx-auto h-28">
-        <h1 className="text-4xl mb-2 md:text-4xl font-bold py-15 text-center md:text-left">
+      <h2 className="text-center font-header text-4xl font-semibold uppercase sm:text-5xl lg:text-5xl">
           {Strings.Project}
-        </h1>
+        </h2>
         <h4
           className="font-header text-xl font-medium py-2 sm:text-2xl text-center lg:text-3xl"
         >
