@@ -49,6 +49,7 @@ export default function Projects() {
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 py-18 pb-215">
             {/* Single card */}
             {projects.map((project) => (
+              <Link key={project.id} href={`/projects/${project.slug}`}>
               <div key={project.id} className="md:w-1/1 p-4">
               <Card
                 isFooterBlurred
@@ -84,6 +85,7 @@ export default function Projects() {
                 </CardFooter>
               </Card>
               </div>
+              </Link>
             ))}
           </div>
         </div>
