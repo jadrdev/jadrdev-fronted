@@ -1,11 +1,12 @@
 'use client';
 import { api } from "@/api/api";
 import { Post } from "@/domain/interfaces/PostInterface";
-import Link from "next/link";
-import Image from "next/image";
 import { useEffect, useState } from "react";
+import { DefaultSeo } from "next-seo";
 
 export default function Page({ params }: { params: { slug: string } }) {
+
+
 
   const [posts, setPosts] = useState<Post>();
 
@@ -26,6 +27,29 @@ export default function Page({ params }: { params: { slug: string } }) {
 
 
   return (
+    <>
+    <DefaultSeo
+    title={posts?.title}
+    description={posts?.meta_description}
+    openGraph={{
+      type: "website",
+      title: posts?.title,
+      description: posts?.meta_description,
+      url: `https://joshuadiaz.dev/projects/${posts?.slug}`,
+      twitter: {
+        handle: "@joshuadiazdev",
+        cardType: "summary_large_image",
+      },
+      images: [
+        {
+          url: posts?.feature_image,
+          width: 800,
+          height: 600,
+          alt: posts?.title,
+        },
+      ],
+    }}
+  />
     <main className="flex flex-col justify-center pt-32 pb-40">
     <article className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
       <small>
@@ -38,7 +62,7 @@ export default function Page({ params }: { params: { slug: string } }) {
       <img src={posts?.feature_image} alt={posts?.title} className="w-full" />
       </div>
 
-      <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4">
+      <h1 className="font-bold text-2xl md:text-3xl tracking-tight mb-4">
         {posts?.title}
       </h1>
 
@@ -75,6 +99,7 @@ export default function Page({ params }: { params: { slug: string } }) {
       </div>
     </article>
   </main>
+  </>
      
   );
 }
