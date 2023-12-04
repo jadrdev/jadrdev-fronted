@@ -36,24 +36,6 @@ export default function Page({ params }: { params: { slug: string } }) {
         url:  `https://jadrdev.com/projects/${posts?.slug}`,
         title:  posts?.title,
         description: posts?.excerpt,
-        images: [
-          {
-            url: posts?.feature_image,
-            width: 800,
-            height: 600,
-            alt: 'Og Image Alt',
-            type: 'image/jpeg',
-          },
-          {
-            url:  posts?.feature_image,
-            width: 900,
-            height: 800,
-            alt: 'Og Image Alt Second',
-            type: 'image/jpeg',
-          },
-          { url: 'https://www.example.ie/og-image-03.jpg' },
-          { url: 'https://www.example.ie/og-image-04.jpg' },
-        ],
         siteName: 'Joshua A. Díaz Robayna',
       }}
       twitter={{
