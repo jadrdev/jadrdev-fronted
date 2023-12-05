@@ -2,7 +2,6 @@
 import { api } from "@/api/api";
 import { Post } from "@/domain/interfaces/PostInterface";
 import { useEffect, useState } from "react";
-import { NextSeo } from "next-seo";
 
 export default function Page({ params }: { params: { slug: string } }) {
 
@@ -28,22 +27,6 @@ export default function Page({ params }: { params: { slug: string } }) {
 
   return (
     <>
-     <NextSeo
-      title= {posts?.title}
-      description={posts?.excerpt}
-      canonical="https://www.canonical.ie/"
-      openGraph={{
-        url:  `https://jadrdev.com/projects/${posts?.slug}`,
-        title:  posts?.title,
-        description: posts?.excerpt,
-        siteName: 'Joshua A. Díaz Robayna',
-      }}
-      twitter={{
-        handle: '@jadrdev',
-        site: 'jadrdev',
-        cardType: 'summary_large_image',
-      }}
-    />
     <main className="flex flex-col justify-center pt-32 pb-40">
     <article className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
       <small>
