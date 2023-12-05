@@ -19,7 +19,7 @@ const AboutMe = () => {
             />
           </div>
           <div className="p-8">
-            <h1 className="uppercase tracking-wide text-2xl text-white font-semibold">{Strings.AboutMe}</h1>
+            <h2 className="uppercase tracking-wide text-2xl text-white font-semibold">{Strings.AboutMe}</h2>
             <p className="tracking-wide text-lg text-white font-semibold">{Strings.AboutMeDescription} </p>
             <p className="tracking-wide text-lg text-white font-semibold">{Strings.AboutMeDescription2}</p>
             <p className="tracking-wide text-lg text-white font-semibold">{Strings.AboutMeDescription3}</p>
