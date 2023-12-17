@@ -40,9 +40,9 @@ export default function Page({ params }: { params: { slug: string } }) {
           />
         </div>
 
-        <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4">
+        <h4 className="font-bold text-5xl md:text-5xl tracking-tight mb-4">
           {posts?.title}
-        </h1>
+        </h4>
 
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full mt-2">
           <div className="flex items-center">
