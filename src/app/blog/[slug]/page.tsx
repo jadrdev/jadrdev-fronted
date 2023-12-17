@@ -8,6 +8,8 @@ import { useEffect, useState } from "react";
 export default function Page({ params }: { params: { slug: string } }) {
   const [posts, setPosts] = useState<Post>();
 
+  
+
   useEffect(() => {
     const fetchData = async () => {
       try {
