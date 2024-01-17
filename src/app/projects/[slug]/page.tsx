@@ -1,30 +1,18 @@
 'use client';
+import { Metadata, ResolvingMetadata } from 'next'
 import { api } from "@/api/api";
-import { Post } from "@/domain/interfaces/PostInterface";
-import { useEffect, useState } from "react";
 
-export default function Page({ params }: { params: { slug: string } }) {
+async function getData(params: { slug: string }) {
+  const postsData = await api.posts.read({
+    slug: params.slug,
+  });
+  return postsData;
 
+}
 
-
-  const [posts, setPosts] = useState<Post>();
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const postsData = await api.posts.read({
-            slug: params.slug,
-            });
-        setPosts(postsData);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-
+export default async function Page({ params }: { params: { slug: string } }) {
+  const data = await getData(params);
+ 
   return (
     <>
     <main className="flex flex-col justify-center pt-32 pb-40">
@@ -36,32 +24,32 @@ export default function Page({ params }: { params: { slug: string } }) {
       </small>
 
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full mt-2 mb-4">
-      <img src={posts?.feature_image} alt={posts?.title} className="w-full" />
+      <img src={data?.feature_image} alt={data?.title} className="w-full" />
       </div>
 
       <h1 className="font-bold text-2xl md:text-3xl tracking-tight mb-4">
-        {posts?.title}
+        {data?.title}
       </h1>
 
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full mt-2">
         <div className="flex items-center">
-          {/* <img
+          <img
             alt="Joshua"
             height={24}
             width={24}
             src="../../../img/avatar.webp"
             className="rounded-full"
-          /> */}
+          />
 
           <p className="text-sm ml-2 text-gray-500">
             {"Joshua A. Díaz Robayna / "}
             <span className="text-gray-600">
-              {posts?.reading_time} min read
+              {data?.reading_time} min read
             </span>
             {" / "}
 
             <span className="text-gray-600">
-              {new Date(posts?.published_at as string).toLocaleDateString()}
+              {new Date(data?.published_at as string).toLocaleDateString()}
             </span>
           </p>
         </div>
@@ -72,7 +60,7 @@ export default function Page({ params }: { params: { slug: string } }) {
       </div>
 
       <div className="prose dark:prose-dark max-w-none w-full mt-5 mb-8">
-      <div dangerouslySetInnerHTML={{ __html: posts?.html as string }} />
+      <div dangerouslySetInnerHTML={{ __html: data?.html as string }} />
       </div>
     </article>
   </main>

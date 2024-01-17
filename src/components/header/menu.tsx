@@ -2,25 +2,10 @@ import React, { use, useEffect, useState } from "react";
 import avatar from "../../../src/img/avatar.webp";
 import Image from "next/image";
 import { Strings } from "@/constants/string";
-import { api } from "@/api/api";
-import { SettingGhost } from "@/domain/interfaces/SettingsInterface";
-import { useTheme } from 'next-themes'
 const menu = () => {
-  const [settings, setSettings] = useState<SettingGhost>();
-  const { theme, setTheme } = useTheme();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const postsData = await api.settings.browse();
-        setSettings(postsData);
-      } catch (error) {
-        console.error(error);
-      }
-    };
 
-    fetchData();
-  }, []);
+
   return (
     <nav className="fixed z-20 w-full navbackground">
       <div className="container m-auto px-6 md:px-12 lg:px-6">
