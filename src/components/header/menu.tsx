@@ -33,7 +33,7 @@ const menu = () => {
                 </a>
               </li>
               <li>
-                <a className="block md:px-3 text-white" href="#">
+                <a className="block md:px-3 text-white" href="/about">
                   {Strings.About}
                 </a>
               </li>
@@ -67,7 +67,7 @@ const menu = () => {
                   </a>
                 </li>
                 <li>
-                  <a className="block md:px-3 text-white" href="#">
+                  <a className="block md:px-3 text-white" href="/about">
                     {Strings.About}
                   </a>
                 </li>

@@ -7,10 +7,8 @@ import { Post } from "@/domain/interfaces/PostInterface";
 import {
   Card,
   CardHeader,
-  CardBody,
   CardFooter,
   Image,
-  Button,
 } from "@nextui-org/react";
 
 export default function Projects() {
@@ -79,9 +77,6 @@ export default function Projects() {
                       </p>
                     </div>
                   </div>
-                  <Button radius="full" size="sm">
-                    Get App
-                  </Button>
                 </CardFooter>
               </Card>
               </div>
