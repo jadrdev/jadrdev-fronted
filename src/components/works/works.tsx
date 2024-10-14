@@ -112,7 +112,7 @@ const Experience = () => {
                 <div className="mt-1 flex">
                     <div className="ml-4">
                         <h4 className="text-lg leading-6 font-semibold text-white">
-                        Mid-Senior Frontend Developer
+                        Middle Frontend Developer
                         </h4>
                         <p className="mt-2 text-base leading-6 text-white">
                         {Strings.TechnologyUsage}
