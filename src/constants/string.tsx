@@ -12,9 +12,9 @@ export const Strings = {
 
     // About Me
     AboutMe: "Sobre mí",
-    AboutMeDescription: "¡Hola! Mi nombre es Joshua y soy un desarrollador Frontend Web y Mobile. Mi experiencia se centra principalmente en tecnologías como JavaScript, React, Flutter, React Native, TypeScript y Web Performance.",
-    AboutMeDescription2: "En mi trabajo, me esfuerzo por crear experiencias de usuario atractivas y efectivas a través de diseños elegantes y una codificación limpia. Siempre me mantengo al día con las últimas tendencias y avances en la tecnología para ofrecer soluciones innovadoras a mis clientes.",
-    AboutMeDescription3: "Mi objetivo es seguir mejorando mis habilidades y conocimientos para brindar un servicio de alta calidad y satisfacer las necesidades de mis clientes. Si necesitas ayuda con el desarrollo web o móvil, no dudes en contactarme. Estoy aquí para ayudarte.",
+    AboutMeDescription: "¡Hola! Soy Joshua, un desarrollador especializado en Frontend Web y Mobile, con experiencia en tecnologías como JavaScript, React, Flutter, React Native, TypeScript y optimización del rendimiento web.",
+    AboutMeDescription2: "Mi enfoque está en crear experiencias de usuario impactantes mediante diseños elegantes y código limpio. Me mantengo al día con las últimas tendencias tecnológicas para ofrecer soluciones innovadoras y eficientes a mis clientes.",
+    AboutMeDescription3: "Estoy comprometido en mejorar continuamente mis habilidades para ofrecer un servicio de alta calidad que se ajuste a las necesidades de mis clientes. Si buscas apoyo en desarrollo web o móvil, estoy aquí para ayudarte.",
     AboutMeDescription4: "Y por si no nos vemos luego, ¡ Buenos días, Buenas tardes y buenas noches !",
     Talk: "¡ Hablamos !",
 
