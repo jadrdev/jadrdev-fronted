@@ -15,7 +15,7 @@
     "axios": "^1.6.2",
     "framer-motion": "^10.16.12",
     "next": "14.0.2",
-    "next-seo": "^6.4.0",
+    "next-seo": "^6.6.0",
     "next-themes": "^0.2.1",
     "react": "^18",
     "react-dom": "^18"
