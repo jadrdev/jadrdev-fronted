@@ -28,23 +28,23 @@ export default function Page({ params }: { params: { slug: string } }) {
   return (
     <>
     <NextSeo
-      title="Using More of Config"
-      description="This example uses more of the available config options."
-      canonical="https://www.canonical.ie/"
+      title={posts?.title}
+      description={posts?.excerpt}
+      canonical={`https://www.url.ie/${posts?.slug}`}
       openGraph={{
-        url: 'https://www.url.ie/a',
-        title: 'Open Graph Title',
-        description: 'Open Graph Description',
+        url: `https://www.url.ie/${posts?.slug}`,
+        title: posts?.title,
+        description: posts?.excerpt,
         images: [
           {
-            url: 'https://www.example.ie/og-image-01.jpg',
+            url: `${posts?.feature_image}`,
             width: 800,
             height: 600,
-            alt: 'Og Image Alt',
+            alt: 'Og Image Alt First',
             type: 'image/jpeg',
           },
           {
-            url: 'https://www.example.ie/og-image-02.jpg',
+            url:  `${posts?.feature_image}`,
             width: 900,
             height: 800,
             alt: 'Og Image Alt Second',
@@ -56,7 +56,7 @@ export default function Page({ params }: { params: { slug: string } }) {
         siteName: 'SiteName',
       }}
       twitter={{
-        handle: '@handle',
+        handle: '@jadrdev',
         site: '@site',
         cardType: 'summary_large_image',
       }}
