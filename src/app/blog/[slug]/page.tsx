@@ -4,7 +4,6 @@ import { Post } from "@/domain/interfaces/PostInterface";
 import Image from "next/image";
 import Avatar from "../../../img/avatar.webp";
 import { useEffect, useState } from "react";
-import { NextSeo } from "next-seo";
 export default function Page({ params }: { params: { slug: string } }) {
   const [posts, setPosts] = useState<Post>();
 
@@ -27,40 +26,6 @@ export default function Page({ params }: { params: { slug: string } }) {
 
   return (
     <>
-    <NextSeo
-      title={posts?.title}
-      description={posts?.excerpt}
-      canonical={`https://www.url.ie/${posts?.slug}`}
-      openGraph={{
-        url: `https://www.url.ie/${posts?.slug}`,
-        title: posts?.title,
-        description: posts?.excerpt,
-        images: [
-          {
-            url: `${posts?.feature_image}`,
-            width: 800,
-            height: 600,
-            alt: 'Og Image Alt First',
-            type: 'image/jpeg',
-          },
-          {
-            url:  `${posts?.feature_image}`,
-            width: 900,
-            height: 800,
-            alt: 'Og Image Alt Second',
-            type: 'image/jpeg',
-          },
-          { url: 'https://www.example.ie/og-image-03.jpg' },
-          { url: 'https://www.example.ie/og-image-04.jpg' },
-        ],
-        siteName: 'SiteName',
-      }}
-      twitter={{
-        handle: '@jadrdev',
-        site: '@site',
-        cardType: 'summary_large_image',
-      }}
-    />
     <main className="flex flex-col justify-center pt-32 pb-40">
       <article className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
         <small>
