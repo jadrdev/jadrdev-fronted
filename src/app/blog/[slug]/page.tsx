@@ -5,7 +5,43 @@ import Menu from "@/components/header/menu";
 import Image from "next/image";
 import Avatar from "../../../img/avatar.webp";
 import { useEffect, useState } from "react";
-import Head from "next/head";
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: {
+    template: '%s | JadrDev - Joshua A. Díaz Robayna',
+    default: 'JadrDev - Software Mobile & Frontend Developer ', // a default is required when creating a template
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'es_ES',
+    url: 'https://jadrdev.com',
+    siteName: 'JadrDev',
+    title: 'JadrDev - Software Mobile & Frontend Developer',
+    images: [
+      {
+        url: 'https://www.jadrdev.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar.c4c85032.webp',
+        width: 1200,
+        height: 630,
+        alt: 'JadrDev - Software Mobile & Frontend Developer',
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "JadrDev - Software Mobile & Frontend Developer",
+    description: "Software Mobile & Frontend Developer",
+    creator: "@jadrdev",
+    images: [
+      {
+        url: "https://www.jadrdev.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar.c4c85032.webp",
+        width: 1200,
+        height: 630,
+        alt: "JadrDev - Software Mobile & Frontend Developer",
+      },
+    ],
+  },
+}
 
 type PageProps = {
   params: {
@@ -34,35 +70,6 @@ export default function Page({ params }: PageProps) {
 
   return (
     <>
-      {/* Head para SEO */}
-      <Head>
-        <title>{post?.title} | Mi Blog</title>
-        <meta name="description" content={post?.excerpt || "Lee este artículo interesante en nuestro blog."} />
-        <meta name="keywords" content={`blog, artículo, noticias, tecnología`} />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content={post?.title} />
-        <meta property="og:description" content={post?.excerpt || "Lee este artículo interesante en nuestro blog."} />
-        <meta property="og:image:type" content="image/jpeg" />
-        <meta property="og:image" content={post?.feature_image || "/default-image.jpg"} />
-        <meta property="og:image:alt" content={post?.title} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:url" content={`https://mi-blog.com/blog/${post?.slug}`} />
-        <meta property="og:type" content="article" />
-        
-        {/* Twitter Cards */}
-        <meta name="twitter:title" content={post?.title} />
-        <meta name="twitter:description" content={post?.excerpt || "Lee este artículo interesante en nuestro blog."} />
-        <meta name="twitter:image" content={post?.feature_image || "/default-image.jpg"} />
-        <meta name="twitter:image:alt" content={post?.title} />
-        <meta name="twitter:image:width" content="1200" />
-        <meta name="twitter:image:height" content="630" />
-        <meta name="twitter:image:type" content="image/jpeg" />
-        <meta name="twitter:creator" content="@jadrdev" />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
-
       <Menu />
 
       <main className="flex flex-col justify-center pt-32 pb-40">

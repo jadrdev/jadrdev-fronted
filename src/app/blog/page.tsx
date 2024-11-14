@@ -4,7 +4,6 @@ import { Post } from "@/domain/interfaces/PostInterface";
 import { useEffect, useState } from "react";
 import { api } from "@/api/api";
 import Link from "next/link";
-import Head from "next/head";
 export default function Blog() {
 
   const [posts, setPosts] = useState<Post[]>([]);
@@ -29,24 +28,6 @@ export default function Blog() {
   
     return (
       <>
-      <Head>
-        <title>Últimos artículos del blog | Mi Blog</title>
-        <meta name="description" content="Lee los últimos artículos de mi blog sobre noticias y temas interesantes. Mantente al día con lo último." />
-        <meta name="keywords" content="blog, noticias, artículos, tecnología, actualidad" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content="Últimos artículos del blog | Mi Blog" />
-        <meta property="og:description" content="Lee los últimos artículos de mi blog sobre noticias y temas interesantes. Mantente al día con lo último." />
-        <meta property="og:image" content="/default-image.jpg" />
-        <meta property="og:url" content="https://mi-blog.com" />
-        <meta property="og:type" content="website" />
-        
-        {/* Twitter Cards */}
-        <meta name="twitter:title" content="Últimos artículos del blog | Mi Blog" />
-        <meta name="twitter:description" content="Lee los últimos artículos de mi blog sobre noticias y temas interesantes. Mantente al día con lo último." />
-        <meta name="twitter:image" content="/default-image.jpg" />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
       <Menu></Menu>
 
       <main className="flex flex-col justify-center pt-32 pb-40 px-6">
