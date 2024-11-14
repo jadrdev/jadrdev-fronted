@@ -2,6 +2,7 @@ import React, { use, useEffect, useState } from "react";
 import avatar from "../../../src/img/avatar.webp";
 import Image from "next/image";
 import { Strings } from "@/constants/string";
+import Link from 'next/link';
 const menu = () => {
 
 
@@ -28,19 +29,19 @@ const menu = () => {
             </label>
             <ul className="menu lg:hidden">
               <li>
-                <a className="block md:px-3 text-white" href="/">
+              <Link href="/" className="block md:px-3 text-white">
                   {Strings.Home}
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="block md:px-3 text-white" href="/about">
+              <Link href="about" className="block md:px-3 text-white">
                   {Strings.About}
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="block md:px-3 text-white" href="#">
-                  {Strings.Blog}
-                </a>
+              <Link href="blog" className="block md:px-3 text-white">
+                    {Strings.Blog}
+                </Link>
               </li>
               <li>
                 <a className="block md:px-3 text-white" href="#">
@@ -62,19 +63,19 @@ const menu = () => {
             <div className="block w-full lg:items-center lg:flex">
               <ul className="space-y-6 pb-6 tracking-wide font-medium text-gray-100 lg:pb-0 lg:pr-6 lg:items-center lg:flex lg:space-y-0">
                 <li>
-                  <a className="block md:px-3 text-white" href="/">
-                    {Strings.Home}
-                  </a>
+                <Link href="/" className="block md:px-3 text-white">
+                  {Strings.Home}
+                </Link>
                 </li>
                 <li>
-                  <a className="block md:px-3 text-white" href="/about">
-                    {Strings.About}
-                  </a>
+                <Link href="about" className="block md:px-3 text-white">
+                  {Strings.About}
+                </Link>
                 </li>
                 <li>
-                  <a className="block md:px-3 text-white" href="#">
+                <Link href="blog" className="block md:px-3 text-white">
                     {Strings.Blog}
-                  </a>
+                </Link>
                 </li>
                 <li>
                   <a className="block md:px-3 text-white" href="#">
