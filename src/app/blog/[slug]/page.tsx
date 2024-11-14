@@ -6,10 +6,16 @@ import Image from "next/image";
 import Avatar from "../../../img/avatar.webp";
 import { useEffect, useState } from "react";
 import Head from "next/head";
-export default function Page({ params }: { params: { slug: string } }) {
+
+type PageProps = {
+  params: {
+    slug: string;  // Aquí definimos que params tiene un 'slug' que es de tipo string.
+  };
+};
+
+export default function Page({ params }: PageProps) {
   const [post, setPost] = useState<Post>();
 
-  
 
   useEffect(() => {
     const fetchData = async () => {
