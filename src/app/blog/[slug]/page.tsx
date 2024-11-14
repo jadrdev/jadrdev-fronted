@@ -4,41 +4,41 @@ import { Post } from "@/domain/interfaces/PostInterface";
 import Menu from "@/components/header/menu";
 import Image from "next/image";
 import Avatar from "../../../img/avatar.webp";
-import { GetServerSideProps } from "next";
 import { useEffect, useState } from "react";
 import Head from "next/head";
 
 type PageProps = {
-  post: Post;  // Usamos el tipo 'Post' directamente para el post cargado
+  params: {
+    slug: string;  // Aquí definimos que params tiene un 'slug' que es de tipo string.
+  };
 };
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { slug } = context.params as { slug: string }; // Extraemos el 'slug' de los parámetros
+export default function Page({ params }: PageProps) {
+  const [post, setPost] = useState<Post | null>(null);  // Inicializamos el estado como null.
 
-  try {
-    const postData = await api.posts.read({ slug });  // Traemos el artículo usando el slug
-    return {
-      props: { post: postData },  // Pasamos el post como prop al componente
+  // Cargar datos cuando el componente se monta.
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const postData = await api.posts.read({ slug: params.slug });
+        setPost(postData);  // Actualizamos el estado con los datos obtenidos.
+      } catch (error) {
+        console.error("Error fetching the post:", error);
+      }
     };
-  } catch (error) {
-    console.error(error);
-    return {
-      notFound: true,  // Si hay un error o el post no se encuentra, retornamos un 404
-    };
-  }
-};
 
-export default function Page({ post }: PageProps) {
-  
-  if (!post) return <div>Loading...</div>;
-  
+    fetchData();
+  }, [params.slug]);  // Dependemos del 'slug' para volver a ejecutar la llamada si cambia.
+
+  if (!post) return <div>Loading...</div>;  // Mostramos un mensaje de carga hasta que se obtengan los datos.
+
   return (
     <>
-     {/* Head for SEO */}
-     <Head>
+      {/* Head para SEO */}
+      <Head>
         <title>{post?.title} | Mi Blog</title>
         <meta name="description" content={post?.excerpt || "Lee este artículo interesante en nuestro blog."} />
-        <meta name="keywords" content="blog, artículo, noticias, tecnología, {post?.tags.join(',')}" />
+        <meta name="keywords" content={`blog, artículo, noticias, tecnología, ${post?.tags.join(',')}`} />
         
         {/* Open Graph */}
         <meta property="og:title" content={post?.title} />
@@ -53,60 +53,60 @@ export default function Page({ post }: PageProps) {
         <meta name="twitter:image" content={post?.feature_image || "/default-image.jpg"} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-    <Menu></Menu>
-    <main className="flex flex-col justify-center pt-32 pb-40">
-      <article className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
-        <small>
-          <a href="/">
-            <a>👈 Back to home</a>
-          </a>
-        </small>
 
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full mt-2 mb-4">
-          <img
-            src={post?.feature_image}
-            alt={post?.title}
-            className="w-full"
-          />
-        </div>
+      <Menu />
 
-        <h4 className="font-bold text-5xl md:text-5xl tracking-tight mb-4">
-          {post?.title}
-        </h4>
+      <main className="flex flex-col justify-center pt-32 pb-40">
+        <article className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
+          <small>
+            <a href="/">👈 Back to home</a>
+          </small>
 
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full mt-2">
-          <div className="flex items-center">
-            <Image
-              src={Avatar}
-              alt="joshua-avatar"
-              width={24}
-              height={24}
-              className="rounded-full"
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full mt-2 mb-4">
+            <img
+              src={post?.feature_image}
+              alt={post?.title}
+              className="w-full"
             />
+          </div>
 
-            <p className="text-sm ml-2 text-gray-500">
-              {"Joshua A. Díaz Robayna / "}
-              <span className="text-gray-600">
-                {post?.reading_time} min read
-              </span>
-              {" / "}
+          <h4 className="font-bold text-5xl md:text-5xl tracking-tight mb-4">
+            {post?.title}
+          </h4>
 
-              <span className="text-gray-600">
-                {new Date(post?.published_at as string).toLocaleDateString()}
-              </span>
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full mt-2">
+            <div className="flex items-center">
+              <Image
+                src={Avatar}
+                alt="joshua-avatar"
+                width={24}
+                height={24}
+                className="rounded-full"
+              />
+
+              <p className="text-sm ml-2 text-gray-500">
+                {"Joshua A. Díaz Robayna / "}
+                <span className="text-gray-600">
+                  {post?.reading_time} min read
+                </span>
+                {" / "}
+
+                <span className="text-gray-600">
+                  {new Date(post?.published_at as string).toLocaleDateString()}
+                </span>
+              </p>
+            </div>
+
+            <p className="text-sm text-gray-500 min-w-32 mt-2 md:mt-0">
+              {/* {article.readingTime.text} */}
             </p>
           </div>
 
-          <p className="text-sm text-gray-500 min-w-32 mt-2 md:mt-0">
-            {/* {article.readingTime.text} */}
-          </p>
-        </div>
-
-        <div className="prose dark:prose-dark max-w-none w-full mt-5 mb-8">
-          <div dangerouslySetInnerHTML={{ __html: post?.html as string }} />
-        </div>
-      </article>
-    </main>
+          <div className="prose dark:prose-dark max-w-none w-full mt-5 mb-8">
+            <div dangerouslySetInnerHTML={{ __html: post?.html as string }} />
+          </div>
+        </article>
+      </main>
     </>
   );
 }
