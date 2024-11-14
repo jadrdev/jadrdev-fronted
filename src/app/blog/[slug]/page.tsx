@@ -43,7 +43,11 @@ export default function Page({ params }: PageProps) {
         {/* Open Graph */}
         <meta property="og:title" content={post?.title} />
         <meta property="og:description" content={post?.excerpt || "Lee este artículo interesante en nuestro blog."} />
+        <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image" content={post?.feature_image || "/default-image.jpg"} />
+        <meta property="og:image:alt" content={post?.title} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property="og:url" content={`https://mi-blog.com/blog/${post?.slug}`} />
         <meta property="og:type" content="article" />
         
@@ -51,6 +55,11 @@ export default function Page({ params }: PageProps) {
         <meta name="twitter:title" content={post?.title} />
         <meta name="twitter:description" content={post?.excerpt || "Lee este artículo interesante en nuestro blog."} />
         <meta name="twitter:image" content={post?.feature_image || "/default-image.jpg"} />
+        <meta name="twitter:image:alt" content={post?.title} />
+        <meta name="twitter:image:width" content="1200" />
+        <meta name="twitter:image:height" content="630" />
+        <meta name="twitter:image:type" content="image/jpeg" />
+        <meta name="twitter:creator" content="@jadrdev" />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
