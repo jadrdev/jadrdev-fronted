@@ -4,33 +4,31 @@ import { Post } from "@/domain/interfaces/PostInterface";
 import Menu from "@/components/header/menu";
 import Image from "next/image";
 import Avatar from "../../../img/avatar.webp";
+import { GetServerSideProps } from "next";
 import { useEffect, useState } from "react";
 import Head from "next/head";
 
 type PageProps = {
-  params: {
-    slug: string;  // Aquí definimos que params tiene un 'slug' que es de tipo string.
-  };
+  post: Post;  // Usamos el tipo 'Post' directamente para el post cargado
 };
 
-export default function Page({ params }: PageProps) {
-  const [post, setPost] = useState<Post>();
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const { slug } = context.params as { slug: string }; // Extraemos el 'slug' de los parámetros
 
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const postData = await api.posts.read({
-          slug: params.slug,
-        });
-        setPost(postData);
-      } catch (error) {
-        console.error(error);
-      }
+  try {
+    const postData = await api.posts.read({ slug });  // Traemos el artículo usando el slug
+    return {
+      props: { post: postData },  // Pasamos el post como prop al componente
     };
+  } catch (error) {
+    console.error(error);
+    return {
+      notFound: true,  // Si hay un error o el post no se encuentra, retornamos un 404
+    };
+  }
+};
 
-    fetchData();
-  }, []);
+export default function Page({ post }: PageProps) {
   
   if (!post) return <div>Loading...</div>;
   

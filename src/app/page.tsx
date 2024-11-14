@@ -7,7 +7,6 @@ import Projects from "@/components/projects/projects";
 import Experience from "@/components/works/works";
 import { Articles } from "@/components/blog/article";
 import {NextUIProvider} from "@nextui-org/react";
-import { NextSeo } from "next-seo";
 export default function Home() {
 
 
