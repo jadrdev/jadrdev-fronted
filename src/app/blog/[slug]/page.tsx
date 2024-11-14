@@ -22,14 +22,56 @@ export default function Page({ params }: PageProps) {
     const fetchData = async () => {
       try {
         const postData = await api.posts.read({ slug: params.slug });
-        setPost(postData);  // Actualizamos el estado con los datos obtenidos.
+        setPost(postData);
+        
+        if (postData) {
+          // Actualizamos el título y la descripción del documento
+          document.title = postData.title;
+          
+          const metaDescription = document.querySelector('meta[name="description"]');
+          if (metaDescription) {
+            metaDescription.setAttribute("content", postData.excerpt);
+          } else {
+            const description = document.createElement("meta");
+            description.name = "description";
+            description.content = postData.excerpt;
+            document.head.appendChild(description);
+          }
+          
+          // Añadir etiquetas para Twitter
+          const twitterImage = document.createElement("meta");
+          twitterImage.name = "twitter:image";
+          twitterImage.content = postData.feature_image;
+          document.head.appendChild(twitterImage);
+
+          const twitterCard = document.createElement("meta");
+          twitterCard.name = "twitter:card";
+          twitterCard.content = "summary_large_image";
+          document.head.appendChild(twitterCard);
+
+          // Añadir etiquetas Open Graph
+          const ogImage = document.createElement("meta");
+          ogImage.setAttribute("property", "og:image");
+          ogImage.content = postData.feature_image;
+          document.head.appendChild(ogImage);
+
+          const ogTitle = document.createElement("meta");
+          ogTitle.setAttribute("property", "og:title");
+          ogTitle.content = postData.title;
+          document.head.appendChild(ogTitle);
+
+          const ogDescription = document.createElement("meta");
+          ogDescription.setAttribute("property", "og:description");
+          ogDescription.content = postData.excerpt;
+          document.head.appendChild(ogDescription);
+        }
       } catch (error) {
         console.error("Error fetching the post:", error);
       }
     };
 
     fetchData();
-  }, [params.slug]);  // Dependemos del 'slug' para volver a ejecutar la llamada si cambia.
+  }, [params.slug]);
 
   if (!post) return <div>Loading...</div>;  // Mostramos un mensaje de carga hasta que se obtengan los datos.
 
