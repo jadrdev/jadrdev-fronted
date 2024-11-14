@@ -38,7 +38,7 @@ export default function Page({ params }: PageProps) {
       <Head>
         <title>{post?.title} | Mi Blog</title>
         <meta name="description" content={post?.excerpt || "Lee este artículo interesante en nuestro blog."} />
-        <meta name="keywords" content={`blog, artículo, noticias, tecnología, ${post?.tags.join(',')}`} />
+        <meta name="keywords" content={`blog, artículo, noticias, tecnología`} />
         
         {/* Open Graph */}
         <meta property="og:title" content={post?.title} />
