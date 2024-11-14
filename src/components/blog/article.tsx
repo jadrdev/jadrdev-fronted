@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { Card, CardHeader, CardBody, Image } from "@nextui-org/react";
 
 export const Articles = () => {
-  const [posts, setPosts] = useState<Post[]>([]);
+  const [post, setPost] = useState<Post[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,7 +16,7 @@ export const Articles = () => {
           filter: "tag:news",
           order: "published_at desc"
         });
-        setPosts(postsData);
+        setPost(postsData);
       } catch (error) {
         console.error(error);
       }
@@ -30,12 +30,12 @@ export const Articles = () => {
       <h2 className="text-3xl font-bold tracking-tight text-white md: text-center p-1 ">
         Últimos artículos de mi blog
       </h2>
-      {posts.length > 0 ? (
+      {post.length > 0 ? (
         <div className="flex flex-col items-center justify-center w-full py-10">
           <div className="flex flex-col md:flex-row md:space-x-4">
             {" "}
             {/* Cambiado a flex-col para móvil y flex-row para pantallas medianas y grandes */}
-            {posts.map((post) => (
+            {post.map((post) => (
               <div key={post.id} className="md:w-1/3 p-4">
                 {" "}
                 {/* Establecer el ancho de la tarjeta en un tercio de la pantalla en dispositivos medianos y grandes */}
