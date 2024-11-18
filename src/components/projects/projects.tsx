@@ -88,13 +88,13 @@ export default function Projects() {
         <p>Cargando...</p>
       )}
       {/* Grid ends here */}
-      <div className="mx-auto pt-8 text-center">
+      {/* <div className="mx-auto pt-8 text-center">
         <Link href="projects">
           <button className="text-xl bg-transparent hover:bg-red-500 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded">
             Otros proyectos
           </button>
         </Link>
-      </div>
+      </div> */}
     </section>
   );
 }
