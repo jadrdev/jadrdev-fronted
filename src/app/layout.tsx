@@ -1,7 +1,6 @@
 import { Inter } from 'next/font/google'
 import '../styles/globals.css'
 import "../styles/prim.nord.css";
-import avatar from '../../../src/img/avatar.webp';
 const inter = Inter({ subsets: ['latin'] })
 
 
