@@ -13,6 +13,7 @@
     "@tryghost/content-api": "^1.11.20",
     "@vercel/analytics": "^1.1.1",
     "axios": "^1.6.2",
+    "debug": "^4.3.7",
     "framer-motion": "^10.16.12",
     "next": "^13.5.7",
     "next-seo": "^6.6.0",
