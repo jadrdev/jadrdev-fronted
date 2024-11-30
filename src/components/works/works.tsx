@@ -6,7 +6,7 @@ import Velocitech from "../../../src/img/logo-light-c.svg";
 import keapps from "../../../src/img/keapps-logo__negative.svg";
 import sao from "../../../src/img/Logotipo-SAO-e1647363525963.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngular, faReact, faDocker, faJs, faDartLang, faWordpress, faMicrosoft, faPhp } from '@fortawesome/free-brands-svg-icons';
+import { faAngular, faReact, faDocker, faJs, faDartLang, faWordpress, faMicrosoft, faPhp, faGithub, faLaravel } from '@fortawesome/free-brands-svg-icons';
 import { faFlutter } from "@fortawesome/free-brands-svg-icons/faFlutter";
 
 
@@ -52,6 +52,10 @@ const Experience = () => {
                         <FontAwesomeIcon icon={faAngular} size="2x" style={
                             {marginRight: "10px"}
                         }/>
+
+                        
+
+
                         <svg xmlns="http://www.w3.org/2000/svg" style={
                           {
                             fill: "#9ca3af",
@@ -70,8 +74,13 @@ const Experience = () => {
                           <FontAwesomeIcon icon={faJs} size="2x" style={
                             {marginRight: "10px"}
                         }/>
+                        
+                        <FontAwesomeIcon icon={faGithub} size="2x" style={
+                            {marginRight: "10px"}
+                        }/>
+                        
 
-                        <FontAwesomeIcon icon={faPhp} size="2x" style={
+                        <FontAwesomeIcon icon={faLaravel} size="2x" style={
                             {marginRight: "10px"}
                         }/>
 
@@ -122,6 +131,9 @@ const Experience = () => {
                         <FontAwesomeIcon icon={faJs} size="2x" style={
                             {marginRight: "10px"}
                         }/>
+                        <FontAwesomeIcon icon={faGithub} size="2x" style={
+                            {marginRight: "10px"}
+                        }/>
                          <FontAwesomeIcon icon={faWordpress} size="2x" style={
                             {marginRight: "10px"}
                         }/>
@@ -164,7 +176,11 @@ const Experience = () => {
                         <FontAwesomeIcon icon={faReact} size="2x" style={
                             {marginRight: "10px"}
                         } />
+                        
                         <FontAwesomeIcon icon={faJs} size="2x" style={
+                            {marginRight: "10px"}
+                        }/>
+                         <FontAwesomeIcon icon={faGithub} size="2x" style={
                             {marginRight: "10px"}
                         }/>
                         <FontAwesomeIcon icon={faDocker} size="2x" style={
@@ -211,6 +227,9 @@ const Experience = () => {
                             {marginRight: "10px"}
                         } />
                         <FontAwesomeIcon icon={faJs} size="2x" style={
+                            {marginRight: "10px"}
+                        }/>
+                        <FontAwesomeIcon icon={faGithub} size="2x" style={
                             {marginRight: "10px"}
                         }/>
                         <FontAwesomeIcon icon={faDocker} size="2x" style={
