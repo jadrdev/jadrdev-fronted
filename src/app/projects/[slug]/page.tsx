@@ -1,5 +1,4 @@
 'use client';
-import { Metadata, ResolvingMetadata } from 'next'
 import { api } from "@/api/api";
 
 async function getData(params: { slug: string }) {
