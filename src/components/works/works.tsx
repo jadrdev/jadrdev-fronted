@@ -43,12 +43,12 @@ const Experience = () => {
                 <div className="mt-1 flex">
                     <div className="ml-4">
                         <h4 className="text-lg leading-6 font-semibold text-white">
-                        Mid-Senior Frontend Developer
+                        Senior Frontend Developer
                         </h4>
                         <p className="mt-2 text-base leading-6 text-white">
                         {Strings.TechnologyUsage}
                         </p>
-                        <div className="mt-2 text-base leading-6 text-gray-400 flex justify-start">
+                        <div className="mt-2 text-base leading-6 text-gray-400 flex justify-center xl:justify-start">
                         <FontAwesomeIcon icon={faAngular} size="2x" style={
                             {marginRight: "10px"}
                         }/>
@@ -56,6 +56,9 @@ const Experience = () => {
                             {marginRight: "10px"}
                         } />
                         <FontAwesomeIcon icon={faDocker} size="2x" style={
+                            {marginRight: "10px"}
+                        }/>
+                        <FontAwesomeIcon icon={faWordpress} size="2x" style={
                             {marginRight: "10px"}
                         }/>
                         </div>
@@ -88,12 +91,12 @@ const Experience = () => {
                 <div className="mt-1 flex">
                     <div className="ml-4">
                         <h4 className="text-lg leading-6 font-semibold text-white">
-                        Mid-Senior Frontend Developer
+                        Mobile Developer
                         </h4>
                         <p className="mt-2 text-base leading-6 text-white">
                         {Strings.TechnologyUsage}
                         </p>
-                        <div className="mt-2 text-base leading-6 text-gray-400 flex justify-start">
+                        <div className="mt-2 text-base leading-6 text-gray-400 flex justify-center xl:justify-start">
                         <FontAwesomeIcon icon={faDartLang} size="2x" style={
                             {marginRight: "10px"}
                         }/>
@@ -136,12 +139,12 @@ const Experience = () => {
                 <div className="mt-1 flex">
                     <div className="ml-4">
                         <h4 className="text-lg leading-6 font-semibold text-white">
-                        Middle Frontend Developer
+                        Software Developer
                         </h4>
                         <p className="mt-2 text-base leading-6 text-white">
                         {Strings.TechnologyUsage}
                         </p>
-                        <div className="mt-2 text-base leading-6 text-gray-400 flex justify-start">
+                        <div className="mt-2 text-base leading-6 text-gray-400 flex justify-center xl:justify-start">
                         <FontAwesomeIcon icon={faReact} size="2x" style={
                             {marginRight: "10px"}
                         } />
@@ -181,12 +184,13 @@ const Experience = () => {
                 <div className="mt-1 flex">
                     <div className="ml-4">
                         <h4 className="text-lg leading-6 font-semibold text-white">
-                        Mid-Junior Frontend Developer
+                        Frontend Web Developer
                         </h4>
                         <p className="mt-2 text-base leading-6  text-white">
                         {Strings.TechnologyUsage}
                         </p>
-                        <div className="mt-2 text-base leading-6 text-gray-400 flex justify-start">
+                        <div className="mt-2 text-base leading-6 text-gray-400 flex justify-center xl:justify-start">
+
                         <FontAwesomeIcon icon={faReact} size="2x" style={
                             {marginRight: "10px"}
                         } />
@@ -200,6 +204,7 @@ const Experience = () => {
                             {marginRight: "10px"}
                         }/>
                         </div>
+                    
                     </div>
                 </div>
               </div>
