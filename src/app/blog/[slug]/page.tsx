@@ -64,7 +64,7 @@ export default async function Page({ params }: PageProps) {
     <>
       <Menu />
       <main className="flex flex-col justify-center pt-32 pb-40">
-        <article className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
+      <article className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full px-4">
           <small>
             <a href="/">👈 Back to home</a>
           </small>

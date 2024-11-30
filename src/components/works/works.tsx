@@ -6,7 +6,8 @@ import Velocitech from "../../../src/img/logo-light-c.svg";
 import keapps from "../../../src/img/keapps-logo__negative.svg";
 import sao from "../../../src/img/Logotipo-SAO-e1647363525963.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngular, faReact, faDocker } from '@fortawesome/free-brands-svg-icons';
+import { faAngular, faReact, faDocker, faJs, faDartLang, faWordpress, faMicrosoft } from '@fortawesome/free-brands-svg-icons';
+import { faFlutter } from "@fortawesome/free-brands-svg-icons/faFlutter";
 
 
 
@@ -92,9 +93,20 @@ const Experience = () => {
                         <p className="mt-2 text-base leading-6 text-white">
                         {Strings.TechnologyUsage}
                         </p>
-                        <p className="mt-2 text-base leading-6 text-gray-400">
-                        Flutter, React, Dart, TypeScript, Docker
-                        </p>
+                        <div className="mt-2 text-base leading-6 text-gray-400 flex justify-start">
+                        <FontAwesomeIcon icon={faDartLang} size="2x" style={
+                            {marginRight: "10px"}
+                        }/>
+                        <FontAwesomeIcon icon={faFlutter} size="2x" style={
+                            {marginRight: "10px"}
+                        }/>
+                        <FontAwesomeIcon icon={faJs} size="2x" style={
+                            {marginRight: "10px"}
+                        }/>
+                         <FontAwesomeIcon icon={faWordpress} size="2x" style={
+                            {marginRight: "10px"}
+                        }/>
+                        </div>
                        
                     </div>
                 </div>
@@ -129,10 +141,18 @@ const Experience = () => {
                         <p className="mt-2 text-base leading-6 text-white">
                         {Strings.TechnologyUsage}
                         </p>
-                        <p className="mt-2 text-base leading-6 text-gray-400">
-                        React, React Native, TypeScript, NestJS
-                        </p>
-                       
+                        <div className="mt-2 text-base leading-6 text-gray-400 flex justify-start">
+                        <FontAwesomeIcon icon={faReact} size="2x" style={
+                            {marginRight: "10px"}
+                        } />
+                        <FontAwesomeIcon icon={faJs} size="2x" style={
+                            {marginRight: "10px"}
+                        }/>
+                        <FontAwesomeIcon icon={faDocker} size="2x" style={
+                            {marginRight: "10px"}
+                        }/>
+                        </div>
+
                     </div>
                 </div>
               </div>
@@ -166,10 +186,20 @@ const Experience = () => {
                         <p className="mt-2 text-base leading-6  text-white">
                         {Strings.TechnologyUsage}
                         </p>
-                        <p className="mt-2 text-base leading-6 text-gray-400">
-                        React, TypeScript, Docker, SharePoint
-                        </p>
-                    
+                        <div className="mt-2 text-base leading-6 text-gray-400 flex justify-start">
+                        <FontAwesomeIcon icon={faReact} size="2x" style={
+                            {marginRight: "10px"}
+                        } />
+                        <FontAwesomeIcon icon={faJs} size="2x" style={
+                            {marginRight: "10px"}
+                        }/>
+                        <FontAwesomeIcon icon={faDocker} size="2x" style={
+                            {marginRight: "10px"}
+                        }/>
+                        <FontAwesomeIcon icon={faMicrosoft} size="2x" style={
+                            {marginRight: "10px"}
+                        }/>
+                        </div>
                     </div>
                 </div>
               </div>
