@@ -63,24 +63,6 @@ export default function Blog() {
                 {post?.excerpt?.substring(0, 200) || "Resumen no disponible."}
               </p>
 
-              {/* Fecha de publicación */}
-              <p className="text-sm text-gray-500 dark:text-gray-400 mt-4">
-                {new Date(post.published_at).toLocaleDateString()}
-              </p>
-
-              {/* Etiquetas */}
-              <div className="mt-4">
-                {post.tags.map((tag) => (
-                  <span
-                    className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-sm px-2 py-1 rounded-full mr-2"
-                    key={tag.id}
-                  >
-                    {tag.name}
-                  </span>
-                ))}
-              </div>
-              
-
               {/* Link al artículo completo*/}
               <div className="mt-4">
                 <Link  href={`/blog/${post.slug}`} className="text-sm text-gray-500 dark:text-gray-400">
