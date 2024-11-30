@@ -25,7 +25,7 @@ const slider = () => {
         </div>
 
         <div className="pb-16">
-          <div className="md:px-12">
+          {/* <div className="md:px-12">
             <span className="block text-center font-medium text-white">{Strings.TechnologyPrefer}</span>
 
             <div className="mt-8 -mx-6 px-6 overflow-x-auto md:overflow-x-hidden">
@@ -62,20 +62,12 @@ const slider = () => {
                     alt="NodeJs"
                     height={60}
                     width={60}
-                    src={CSSLogo}
-                  />
-                </div>
-                <div className="flex items-center">
-                  <Image
-                    alt="NodeJs"
-                    height={60}
-                    width={60}
                     src={WPLogo}
                   />
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
