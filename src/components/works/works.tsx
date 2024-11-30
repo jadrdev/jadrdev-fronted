@@ -5,6 +5,10 @@ import hiberus from "../../../src/img/logo.svg";
 import Velocitech from "../../../src/img/logo-light-c.svg";
 import keapps from "../../../src/img/keapps-logo__negative.svg";
 import sao from "../../../src/img/Logotipo-SAO-e1647363525963.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngular, faReact, faDocker } from '@fortawesome/free-brands-svg-icons';
+
+
 
 const Experience = () => {
   return (
@@ -43,9 +47,17 @@ const Experience = () => {
                         <p className="mt-2 text-base leading-6 text-white">
                         {Strings.TechnologyUsage}
                         </p>
-                        <p className="mt-2 text-base leading-6 text-gray-400">
-                       Angular, Ionic, React, TypeScript, Docker
-                        </p>
+                        <div className="mt-2 text-base leading-6 text-gray-400 flex justify-start">
+                        <FontAwesomeIcon icon={faAngular} size="2x" style={
+                            {marginRight: "10px"}
+                        }/>
+                        <FontAwesomeIcon icon={faReact} size="2x" style={
+                            {marginRight: "10px"}
+                        } />
+                        <FontAwesomeIcon icon={faDocker} size="2x" style={
+                            {marginRight: "10px"}
+                        }/>
+                        </div>
                        
                     </div>
                 </div>

@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import { api } from "@/api/api";
-import { Post } from "@/domain/interfaces/PostInterface";
 import Menu from "@/components/header/menu";
 import Image from "next/image";
 import Avatar from "../../../img/avatar.webp";
