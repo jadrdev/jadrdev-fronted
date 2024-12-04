@@ -7,6 +7,7 @@ import Projects from "@/components/projects/projects";
 import Experience from "@/components/works/works";
 import { Articles } from "@/components/blog/article";
 import {NextUIProvider} from "@nextui-org/react";
+import ContactForm from "@/components/contact/contact";
 export default function Home() {
 
 
@@ -19,6 +20,7 @@ export default function Home() {
         <Projects></Projects>
         <Experience></Experience>
         <Articles></Articles>
+        <ContactForm></ContactForm>
       </main>
       <Footer></Footer>
       </NextUIProvider>
