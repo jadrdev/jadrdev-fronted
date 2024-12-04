@@ -27,8 +27,18 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1rem;
+  color: #333;
 }
 
 .formGroup textarea {
   min-height: 150px;
+  color: #333;
+}
+
+
+.textarea {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: #333;
 }

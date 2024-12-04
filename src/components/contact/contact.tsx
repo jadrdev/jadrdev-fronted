@@ -1,5 +1,6 @@
 // contact.tsx
 import { useState, FormEvent } from 'react';
+import emailjs from '@emailjs/browser';
 import styles from './contact.module.css';
 
 export default function ContactForm() {
@@ -12,31 +13,36 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setStatus('sending');
+  setStatus('sending');
 
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+  try {
+    const result = await emailjs.send(
+      'service_b6z0399',
+      'template_6vqny7k',
+      {
+        from_name: formData.name,
+        reply_to: formData.email,
+        message: formData.message,
+      },
+      'NPuLILvRvXJKrMrRQ'
+    );
 
-      if (response.ok) {
-        setStatus('success');
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        setStatus('error');
-      }
-    } catch (error) {
+    if (result.text === 'OK') {
+      setStatus('success');
+      setFormData({ name: '', email: '', message: '' });
+    } else {
       setStatus('error');
     }
-  };
+  } catch (error) {
+    setStatus('error');
+    console.error(error);
+  }
+}
 
   return (
     <div className={styles.container}>
       <h2>Contáctanos</h2>
+      <p>Envíanos un mensaje y te responderemos lo antes posible.</p>
       <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.formGroup}>
           <label htmlFor="name">Nombre</label>
@@ -63,6 +69,7 @@ export default function ContactForm() {
         <div className={styles.formGroup}>
           <label htmlFor="message">Mensaje</label>
           <textarea
+            className={styles.textarea}
             id="message"
             value={formData.message}
             onChange={(e) => setFormData({...formData, message: e.target.value})}
@@ -70,7 +77,8 @@ export default function ContactForm() {
           />
         </div>
 
-        <button type="submit" disabled={status === 'sending'}>
+        <button type="submit" style={{ marginTop: '1rem', borderRadius: '0.25rem', border: 'none', padding: '0.5rem 1rem' }}  
+        disabled={status === 'sending'}>
           {status === 'sending' ? 'Enviando...' : 'Enviar'}
         </button>
 
