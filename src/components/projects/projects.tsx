@@ -5,7 +5,7 @@ export default function Projects() {
  const projects = [
     {
       title: "App de Gestión de Tareas",
-      type: "Freelance",
+      type: "Personal",
       description: "Aplicación para gestión de proyectos y seguimiento de tareas",
       technologies: [
         { name: "Flutter", icon: "" }
