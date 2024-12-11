@@ -14,13 +14,14 @@ import { faFlutter } from "@fortawesome/free-brands-svg-icons/faFlutter";
 const Experience = () => {
   return (
     <>
+    
       <div className="container py-16 md:py-20" id="Experience">
-        <h2 className="text-center font-header text-4xl font-semibold uppercase sm:text-5xl lg:text-6xl">
-          {Strings.Work}
-        </h2>
-        <h3 className="pt-6 text-center font-header text-xl font-medium text-white sm:text-2xl lg:text-3xl">
-          {Strings.WorkDescription}
-        </h3>
+      <div className="text-center mb-12">
+      <h2 className="text-4xl font-bold mb-4"> {Strings.Work}</h2>
+      <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+      {Strings.WorkDescription}
+      </p>
+    </div>
         <div className="relative mx-auto mt-12 flex w-full flex-col lg:w-2/3">
           <div className="mt-8 flex flex-col text-center md:flex-row md:text-left">
             <div className="md:w-2/5">
