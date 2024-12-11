@@ -1,10 +1,5 @@
 import React from 'react'
 import Image from "next/image";
-import ReactLogo from '../../../src/img/logo-react.webp'
-import FlutterLogo from '../../../src/img/flutter-logo.png'
-import NodeLogo from '../../../src/img/logo-node.webp'
-import CSSLogo from '../../../src/img/logo-css3.webp'
-import WPLogo from '../../../src/img/logo-wordpress.webp'
 import JarDevIMG from '../../../src/img/jadrdev-pixar.jpeg'
 import { Strings } from '@/constants/string';
 const slider = () => {
@@ -24,51 +19,7 @@ const slider = () => {
           </h4>
         </div>
 
-        <div className="pb-16">
-          {/* <div className="md:px-12">
-            <span className="block text-center font-medium text-white">{Strings.TechnologyPrefer}</span>
-
-            <div className="mt-8 -mx-6 px-6 overflow-x-auto md:overflow-x-hidden">
-              <div className="w-max flex justify-center flex-wrap items-center gap-4 md:w-auto md:gap-6 lg:gap-8">
-                <div className="flex items-center">
-                  <Image
-                    alt="React"
-                    height={60}
-                    width={60}
-                    src={ReactLogo}
-                    className="rounded-full"
-                  />
-                </div>
-                <div className="flex items-center">
-                  <Image
-                    alt="Flutter"
-                    height={60}
-                    width={60}
-                    src={FlutterLogo}
-                    className="rounded-full"
-                  />
-                </div>
-                <div className="flex items-center">
-                  <Image
-                    alt="NodeJs"
-                    height={60}
-                    width={60}
-                    src={NodeLogo}
-                    className="rounded-full"
-                  />
-                </div>
-                <div className="flex items-center">
-                  <Image
-                    alt="NodeJs"
-                    height={60}
-                    width={60}
-                    src={WPLogo}
-                  />
-                </div>
-              </div>
-            </div>
-          </div> */}
-        </div>
+        <div className="pb-16"></div>
       </div>
     </div>
   )
