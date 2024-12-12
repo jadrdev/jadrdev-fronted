@@ -40,6 +40,11 @@ margin-top: 10px;
 margin-bottom: 10px;
 }
 
+h3 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  }
+
 #blog:before {    
   display: block;    
   content: "";    
