@@ -2,7 +2,36 @@ import { api } from "@/api/api";
 import { Post } from "@/domain/interfaces/PostInterface";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Card, CardHeader, CardBody, Image } from "@nextui-org/react";
+import { Image } from "@nextui-org/react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+  faBook, 
+  faPen, 
+  faCode, 
+  faBlog, 
+  faNewspaper
+} from '@fortawesome/free-solid-svg-icons';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+
+
+const iconMapping: { [key: string]: string } = {
+    React: "devicon-react-original",
+    TypeScript: "devicon-typescript-plain",
+    JavaScript: "devicon-javascript-plain",
+    Node: "devicon-nodejs-plain",
+    Python: "devicon-python-plain",
+    Next: "devicon-nextjs-original",
+    Flutter: "devicon-flutter-plain",
+    Wordpress: "devicon-wordpress-plain",
+    Ghost: "devicon-ghost-plain",
+    Gatsby: "devicon-gatsby-plain",
+    Strapi: "devicon-strapi-plain",
+    faBook: "faBook",
+    faPen: "faPen",
+    faCode: "faCode",
+    faBlog: "faBlog",
+    faNewspaper: "faNewspaper"
+  };
 
 export const Articles = () => {
   const [post, setPost] = useState<Post[]>([]);
@@ -57,7 +86,15 @@ export const Articles = () => {
                         className="px-3 py-1 text-xs font-medium rounded-full 
                                  bg-primary-100 text-primary-600 dark:bg-primary-900 dark:text-primary-300"
                       >
-                        {tag.name}
+                         {iconMapping[tag.name.toLowerCase()]?.startsWith('devicon') ? (
+      <i className={`${iconMapping[tag.name.toLowerCase()]} text-lg`}></i>
+    ) : (
+      <FontAwesomeIcon 
+      icon={iconMapping[tag.name.toLowerCase()] as IconProp || faNewspaper} 
+      className="text-lg mr-2" 
+    />
+  )}
+    {tag.name}
                       </span>
                     ))}
                   </div>

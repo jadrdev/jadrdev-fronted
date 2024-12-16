@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 interface Technology {
   name: string;
   icon: string;
