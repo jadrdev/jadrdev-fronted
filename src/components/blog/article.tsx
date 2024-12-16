@@ -16,6 +16,7 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 const iconMapping: { [key: string]: string } = {
     react: "devicon-react-original",
+    reactNative: "devicon-react-original",
     typeScript: "devicon-typescript-plain",
     javaScript: "devicon-javascript-plain",
     node: "devicon-nodejs-plain",
@@ -28,6 +29,7 @@ const iconMapping: { [key: string]: string } = {
     gatsby: "devicon-gatsby-plain",
     strapi: "devicon-strapi-plain",
     git: "devicon-git-plain",
+    mac: "devicon-apple-original",
     faNewspaper: "faNewspaper"
   };
 
