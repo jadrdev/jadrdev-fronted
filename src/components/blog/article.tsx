@@ -11,7 +11,7 @@ export const Articles = () => {
     const fetchData = async () => {
       try {
         const postsData = await api.posts.browse({
-          limit: 4,
+          limit: 3,
           include: "tags,authors",
           filter: "tag:news",
           order: "published_at desc"
@@ -31,45 +31,64 @@ export const Articles = () => {
         Últimos artículos de mi blog
       </h2>
       {post.length > 0 ? (
-  <div className="flex flex-col items-center justify-center w-full py-10">
-    <div className="flex flex-col md:flex-row md:space-x-4 gap-6">
-      {post.map((post) => (
-        <div key={post.id} className="md:w-1/3 p-4">
-          <Link href={`/blog/${post.slug}`} className="block transform transition duration-300 hover:scale-105" passHref>
-            <Card className="col-span-12 sm:col-span-4 h-[300px] overflow-hidden relative group">
-            <CardHeader className="absolute z-10 top-0 left-0 right-0 p-4 flex flex-col gap-3 bg-gradient-to-b from-black/70 to-transparent">
-  <div className="flex flex-col gap-2">
-    <div className="flex flex-wrap gap-2">
-      {post.tags.map((tag) => (
-        <span 
-          key={tag.id}
-          className="text-xs bg-primary/20 backdrop-blur-sm text-white px-2 py-1 rounded-full hover:bg-primary/40 transition-colors"
-        >
-          {tag.name}
-        </span>
-      ))}
+      <div className="max-w-7xl mx-auto px-4 py-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {post.map((post) => (
+          <div key={post.id} className="group">
+            <Link href={`/blog/${post.slug}`} className="block" passHref>
+              <article className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                {/* Imagen */}
+                <div className="aspect-video overflow-hidden">
+                  <Image
+                    removeWrapper
+                    alt={post.title}
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                    src={post.feature_image}
+                  />
+                </div>
+    
+                {/* Contenido */}
+                <div className="p-6">
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {post.tags.map((tag) => (
+                      <span 
+                        key={tag.id}
+                        className="px-3 py-1 text-xs font-medium rounded-full 
+                                 bg-primary-100 text-primary-600 dark:bg-primary-900 dark:text-primary-300"
+                      >
+                        {tag.name}
+                      </span>
+                    ))}
+                  </div>
+    
+                  {/* Título */}
+                  <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white 
+                               group-hover:text-primary-600 dark:group-hover:text-primary-400 
+                               transition-colors duration-300">
+                    {post.title}
+                  </h3>
+    
+                  {/* Metadata */}
+                  <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                    <time dateTime={post.published_at}>
+                      {new Date(post.published_at).toLocaleDateString('es-ES', {
+                        day: 'numeric',
+                        month: 'long',
+                        year: 'numeric'
+                      })}
+                    </time>
+                  </div>
+                </div>
+              </article>
+            </Link>
+          </div>
+        ))}
+      </div>
     </div>
-    <h4 className="text-white font-bold text-xl line-clamp-2 hover:text-primary transition-colors">
-      {post.title}
-    </h4>
-  </div>
-</CardHeader>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-[1]" />
-              <Image
-                removeWrapper
-                alt={post.title}
-                className="z-0 w-full h-full object-cover transform transition duration-300 group-hover:scale-110"
-                src={post.feature_image}
-              />
-            </Card>
-          </Link>
-        </div>
-      ))}
-    </div>
-  </div>
-) : (
-  <p className="text-center text-white/60">Cargando...</p>
-)}
+      ) : (
+        <p>Cargando...</p>
+      )}
     </>
   );
 };
