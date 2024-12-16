@@ -11,7 +11,7 @@ export const Articles = () => {
     const fetchData = async () => {
       try {
         const postsData = await api.posts.browse({
-          limit: 4,
+          limit: 3,
           include: "tags,authors",
           filter: "tag:news",
           order: "published_at desc"
