@@ -15,21 +15,19 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 
 const iconMapping: { [key: string]: string } = {
-    React: "devicon-react-original",
-    TypeScript: "devicon-typescript-plain",
-    JavaScript: "devicon-javascript-plain",
-    Node: "devicon-nodejs-plain",
-    Python: "devicon-python-plain",
-    Next: "devicon-nextjs-original",
-    Flutter: "devicon-flutter-plain",
-    Wordpress: "devicon-wordpress-plain",
-    Ghost: "devicon-ghost-plain",
-    Gatsby: "devicon-gatsby-plain",
-    Strapi: "devicon-strapi-plain",
-    faBook: "faBook",
-    faPen: "faPen",
-    faCode: "faCode",
-    faBlog: "faBlog",
+    react: "devicon-react-original",
+    typeScript: "devicon-typescript-plain",
+    javaScript: "devicon-javascript-plain",
+    node: "devicon-nodejs-plain",
+    python: "devicon-python-plain",
+    next: "devicon-nextjs-original",
+    flutter: "devicon-flutter-plain",
+    wordpress: "devicon-wordpress-plain",
+    ionic: "devicon-ionic-original",
+    ghost: "devicon-ghost-plain",
+    gatsby: "devicon-gatsby-plain",
+    strapi: "devicon-strapi-plain",
+    git: "devicon-git-plain",
     faNewspaper: "faNewspaper"
   };
 
@@ -42,7 +40,7 @@ export const Articles = () => {
         const postsData = await api.posts.browse({
           limit: 3,
           include: "tags,authors",
-          filter: "tag:news",
+          filter: "tag:news, tag:ionic, tag: git, tag:react, tag:next, tag:wordpress, tag:ghost, tag:gatsby, tag:strapi, tag:python, tag:node, tag:javaScript, tag:typeScript, tag:flutter",
           order: "published_at desc"
         });
         setPost(postsData);
@@ -87,7 +85,7 @@ export const Articles = () => {
                                  bg-primary-100 text-primary-600 dark:bg-primary-900 dark:text-primary-300"
                       >
                          {iconMapping[tag.name.toLowerCase()]?.startsWith('devicon') ? (
-      <i className={`${iconMapping[tag.name.toLowerCase()]} text-lg`}></i>
+      <i className={`${iconMapping[tag.name.toLowerCase()]} text-lg  mr-2`}></i>
     ) : (
       <FontAwesomeIcon 
       icon={iconMapping[tag.name.toLowerCase()] as IconProp || faNewspaper} 
