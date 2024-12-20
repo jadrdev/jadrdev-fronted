@@ -48,6 +48,7 @@ export default function RootLayout({
     <html lang="es">
       <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'></link>
       <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+      <img src="https://tracker.metricool.com/c3po.jpg?hash=f012dff837caebea3512211f3e124f2e"/>
       <body className={inter.className}>{children}</body>
     </html>
   )
