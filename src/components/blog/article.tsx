@@ -42,7 +42,7 @@ export const Articles = () => {
         const postsData = await api.posts.browse({
           limit: 3,
           include: "tags,authors",
-          filter: "tag:news, tag:ionic, tag: git, tag:react, tag:next, tag:wordpress, tag:ghost, tag:gatsby, tag:strapi, tag:python, tag:node, tag:javaScript, tag:typeScript, tag:flutter",
+          filter: "tag:news, tag:ionic, tag: git, tag:react, tag:next, tag:wordpress, tag:ghost, tag:gatsby, tag:strapi, tag:python, tag:node, tag:javaScript, tag:typeScript, tag:flutter. tag: reflexion",
           order: "published_at desc"
         });
         setPost(postsData);
