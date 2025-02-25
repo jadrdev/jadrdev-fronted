@@ -23,7 +23,8 @@ const iconMapping: { [key: string]: string } = {
     python: "devicon-python-plain",
     next: "devicon-nextjs-original",
     flutter: "devicon-flutter-plain",
-    wordpress: "devicon-wordpress-plain",
+  wordpress: "devicon-wordpress-plain",
+    laravel: "devicon-laravel-plain",
     ionic: "devicon-ionic-original",
     ghost: "devicon-ghost-plain",
     gatsby: "devicon-gatsby-plain",
@@ -42,7 +43,7 @@ export const Articles = () => {
         const postsData = await api.posts.browse({
           limit: 3,
           include: "tags,authors",
-          filter: "tag:news, tag:ionic, tag: git, tag:react, tag:next, tag:wordpress, tag:ghost, tag:gatsby, tag:strapi, tag:python, tag:node, tag:javaScript, tag:typeScript, tag:flutter, tag: reflexion",
+          filter: "tag:news, tag:ionic, tag: git, tag:react, tag:next, tag:wordpress, tag:ghost, tag:gatsby, tag:strapi, tag:python, tag:node, tag:javaScript, tag:typeScript, tag:flutter, tag: reflexion, tag:laravel",
           order: "published_at desc"
         });
         setPost(postsData);
